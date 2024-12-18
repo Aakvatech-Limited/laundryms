@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "OPR.#####",
+ "creation": "2024-12-17 08:59:33.276567",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "property_type",
+  "request_type",
+  "location",
+  "request_details",
+  "request_by",
+  "assigned_to",
+  "priority",
+  "status",
+  "request_date",
+  "completion_date"
+ ],
+ "fields": [
+  {
+   "default": "Hospital",
+   "fieldname": "property_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Property Type",
+   "options": "Hospital\nHotel\nRestaurant",
+   "reqd": 1
+  },
+  {
+   "default": "Laundry",
+   "fieldname": "request_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Request Type ",
+   "options": "Laundry\nHousekeeping",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "request_details",
+   "fieldtype": "Text Editor",
+   "label": "Request Details"
+  },
+  {
+   "fieldname": "request_by",
+   "fieldtype": "Link",
+   "label": "Request By",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "Customer"
+  },
+  {
+   "default": "High",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "High\nMedium\nLow"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Datetime",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Datetime",
+   "label": "Completion Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-17 09:31:32.273219",
+ "modified_by": "Administrator",
+ "module": "Aakvatech Laundry",
+ "name": "Operational Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
