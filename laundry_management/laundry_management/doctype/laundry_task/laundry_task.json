@@ -11,18 +11,18 @@
  ],
  "fields": [
   {
-   "default": "cleaning",
+
    "fieldname": "task_name",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Task Name",
-   "options": "cleaning\nwashing and drying\nironing and folding\ncollecting soiled Linen"
+   "options": "Laundry Task Activities"
   },
   {
-   "default": "Housekeeping",
+   
    "fieldname": "task_type",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Task Type",
-   "options": "Housekeeping\nLaundry"
+   "options": "Laundry Task Activities"
   }
  ],
  "index_web_pages_for_search": 1,
