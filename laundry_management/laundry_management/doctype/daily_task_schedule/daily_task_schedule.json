@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DTS.#####",
+ "creation": "2024-12-20 11:57:27.809133",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "schedule_date",
+  "location",
+  "status",
+  "remarks",
+  "laundry_request_id",
+  "quality_check_status",
+  "item",
+  "quantity",
+  "daily_task"
+ ],
+ "fields": [
+  {
+   "fieldname": "schedule_date",
+   "fieldtype": "Date",
+   "label": "Schedule Date"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Laundry Location"
+  },
+  {
+   "default": "In Progress",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "laundry_request_id",
+   "fieldtype": "Link",
+   "label": "Laundry Request ID",
+   "options": "Laundry Request"
+  },
+  {
+   "default": "Pass",
+   "fieldname": "quality_check_status",
+   "fieldtype": "Select",
+   "label": "Quality Check Status",
+   "options": "Pass\nFail"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "daily_task",
+   "fieldtype": "Table",
+   "label": "Daily Task",
+   "options": "Daily Task"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-21 11:46:13.984972",
+ "modified_by": "Administrator",
+ "module": "laundry_management",
+ "name": "Daily Task Schedule",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
