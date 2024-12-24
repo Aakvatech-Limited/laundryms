@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field.task_name",
+ "creation": "2024-12-20 11:32:44.571766",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_name",
+  "assigned_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task Name",
+   "options": "Laundry Task"
+  },
+  {
+   "default": "Employee",
+   "fieldname": "assigned_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Assigned To",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-23 14:46:41.000436",
+ "modified_by": "Administrator",
+ "module": "laundry_management",
+ "name": "Daily Task",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
