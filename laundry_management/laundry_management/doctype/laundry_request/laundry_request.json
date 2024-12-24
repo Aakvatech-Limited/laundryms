@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:laundry_request_id",
+ "creation": "2024-12-20 11:37:20.635570",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "laundry_request_id",
+  "request_type",
+  "location",
+  "property_type",
+  "request_details",
+  "requested_by",
+  "priority",
+  "request_date",
+  "completion_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "laundry_request_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Laundry Request ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "request_type",
+   "fieldtype": "Link",
+   "label": "Task Type",
+   "options": "Laundry Task"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Laundry Location"
+  },
+  {
+   "fetch_from": "location.facility_type",
+   "fieldname": "property_type",
+   "fieldtype": "Data",
+   "label": "Property Type"
+  },
+  {
+   "fieldname": "request_details",
+   "fieldtype": "Text Editor",
+   "label": "Request Details"
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "High",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "High\nMedium\nLow"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Laundry Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-24 09:42:53.072163",
+ "modified_by": "Administrator",
+ "module": "laundry_management",
+ "name": "Laundry Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
