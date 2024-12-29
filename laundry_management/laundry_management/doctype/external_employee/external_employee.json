@@ -40,12 +40,13 @@
   {
    "fieldname": "email_address",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Email Address"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-27 11:52:06.303460",
+ "modified": "2024-12-29 09:04:38.569843",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "External Employee",
