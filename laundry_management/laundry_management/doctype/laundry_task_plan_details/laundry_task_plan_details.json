@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PD.#####",
+ "creation": "2024-12-20 11:27:59.187700",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task_name",
+  "task_type",
+  "employee_name",
+  "item",
+  "quantity",
+  "employee_type"
+ ],
+ "fields": [
+  {
+   "depends_on": "class LaundryTaskPlan(Document):\n    def on_submit(self):\n        # Call the function to create Daily Task Schedules\n        self.create_daily_task_schedules()\n\n    def create_daily_task_schedules(self):\n        # Iterate through the child table entries\n        for task in self.laundry_task_plan_detail:\n            # Create a new Daily Task Schedule for each task\n            daily_task_schedule = frappe.get_doc({\n                \"doctype\": \"Daily Task Schedule\",\n                \"employee\": task.employee,\n                \"task_name\": task.task_name,\n                \"task_type\": task.task_type,\n                \"item\": task.item,\n                \"qty\": task.qty,\n                \"date\": self.posting_date,  # Use the posting date from the parent\n                \"supervisor\": self.supervisor_name,\n                \"related_request_id\": self.related_request_id\n            })\n            # Save the new document\n            daily_task_schedule.insert()\n            frappe.db.commit()  # Commit changes to the database\n",
+   "fetch_from": "task_type.task_name",
+   "fieldname": "task_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task Name",
+   "options": "Laundry Task"
+  },
+  {
+   "fetch_from": "task_name.task_type",
+   "fieldname": "task_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task Type"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "options": "employee_type"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "default": "Employee",
+   "fieldname": "employee_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Employee Type",
+   "options": "Employee\nExternal Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-23 12:38:15.399350",
+ "modified_by": "Administrator",
+ "module": "laundry_management",
+ "name": "Laundry Task Plan Details",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
