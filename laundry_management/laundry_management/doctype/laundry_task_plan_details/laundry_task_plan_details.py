@@ -1,5 +1,3 @@
-
-# Copyright (c) 2025, Asha Melius Kisonga and contributor
 # Copyright (c) 2024, Asha Melius Kisonga and contributors
 # For license information, please see license.txt
 
@@ -7,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class LaundryLocation(Document):
+class LaundryTaskPlanDetails(Document):
 	pass

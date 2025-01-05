@@ -25,6 +25,7 @@
   {
    "fieldname": "location",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Location",
    "options": "Laundry Location"
   },
@@ -73,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-21 11:46:13.984972",
+ "modified": "2024-12-30 11:29:54.094018",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Daily Task Schedule",
@@ -89,6 +90,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manager",
    "share": 1,
    "write": 1
   }

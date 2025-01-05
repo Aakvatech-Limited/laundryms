@@ -4,6 +4,7 @@
 # import frappe
 from frappe.model.document import Document
 
+
 class ExternalEmployee(Document):
-	def validate(self):
+	def before_save(self):
 		self.full_name = f'{self.first_name} {self.last_name or ""}'

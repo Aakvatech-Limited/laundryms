@@ -1,8 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LT.#####",
- "creation": "2024-12-20 11:15:58.954763",
+ "autoname": "field:task_name",
+ "creation": "2024-12-30 14:14:11.244209",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,27 +11,24 @@
  ],
  "fields": [
   {
-
    "fieldname": "task_name",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Task Name",
-   "options": "Laundry Task Activities"
+   "unique": 1
   },
   {
-   
    "fieldname": "task_type",
    "fieldtype": "Data",
-   "label": "Task Type",
-   "options": "Laundry Task Activities"
+   "label": "Task Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-20 11:19:49.137243",
+ "modified": "2024-12-30 14:41:44.506907",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Task",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

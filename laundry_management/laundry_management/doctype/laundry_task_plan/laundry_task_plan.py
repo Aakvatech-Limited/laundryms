@@ -16,6 +16,7 @@ class LaundryTaskPlan(Document):
             daily_task_schedule = frappe.new_doc("Daily Task Schedule")
             daily_task_schedule.posting_date = self.posting_date
             daily_task_schedule.completion_date = self.completion_date
+            daily_task_schedule.laundry_request_id = self.laundry_request_id
 
             # Append task details to the Daily Task child table
             daily_task_schedule.append("daily_task", {
@@ -28,6 +29,11 @@ class LaundryTaskPlan(Document):
         
             daily_task_schedule.insert()
             frappe.db.commit()  
+
+    def validate(self):
+        frappe.logger().debug(f"Laundry Request ID: {self.laundry_request_id}")
+        if not self.laundry_request_id:
+            frappe.throw(_("Laundry Request ID is required for submission."))
 
 
 
