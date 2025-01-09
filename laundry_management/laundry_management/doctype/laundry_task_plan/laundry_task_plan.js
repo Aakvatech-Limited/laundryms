@@ -39,7 +39,7 @@ frappe.ui.form.on('Laundry Task Plan', {
             frappe.call({
                 method: 'laundry_management.laundry_management.doctype.laundry_task_plan.laundry_task_plan.create_material_request',
                 args: {
-                    docname: frm.doc.name  // Pass the document name
+                    docname: frm.doc.name  
                 },
                 callback: function (response) {
                     if (response.message) {
@@ -52,3 +52,61 @@ frappe.ui.form.on('Laundry Task Plan', {
         }, __('Actions'));
     }
 });
+
+// //multiple selection for item
+// frappe.ui.form.on('Laundry Task Plan Details', {
+//     select_items_button: function(frm, cdt, cdn) {
+//         let row = locals[cdt][cdn];
+
+        
+//         frappe.call({
+//             method: "frappe.client.get_list",
+//             args: {
+//                 doctype: "Item",
+//                 filters: { disabled: 0 }, 
+//                 fields: ["name"]         
+//             },
+//             callback: function(response) {
+//                 if (response.message) {
+//                     let item_list = response.message.map(item => item.name);
+
+                    
+//                     let dialog = new frappe.ui.Dialog({
+//                         title: "Select Items",
+//                         fields: [
+//                             {
+//                                 label: "Items",
+//                                 fieldname: "items",
+//                                 fieldtype: "MultiCheck",
+//                                 options: item_list.map(item => ({ label: item, value: item }))
+//                             }
+//                         ],
+//                         primary_action_label: "Add Selected Items",
+//                         primary_action(values) {
+                            
+//                             if (values.items && values.items.length > 0) {
+//                                 row.item = values.items.join(", ");
+//                                 frm.refresh_field("laundry_task_plan_details");
+//                             } else {
+//                                 frappe.msgprint("No items were selected.");
+//                             }
+//                             dialog.hide();
+//                         }
+//                     });
+
+//                     dialog.show();
+//                 } else {
+//                     frappe.msgprint("No items found in the Stock module.");
+//                 }
+//             }
+//         });
+//     },
+    
+    //refresh: function(frm) {
+        
+        //frm.fields_dict['laundry_task_plan_details'].grid.fields_map['select_items_button'].wrapper.style.backgroundColor = "#28a745"; 
+        //frm.fields_dict['laundry_task_plan_details'].grid.fields_map['select_items_button'].wrapper.style.color = "#fff"; 
+        //frm.fields_dict['laundry_task_plan_details'].grid.fields_map['select_items_button'].wrapper.style.fontWeight = "bold"; 
+    //}
+//});
+
