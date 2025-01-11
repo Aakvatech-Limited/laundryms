@@ -9,43 +9,57 @@ class LaundryTaskPlan(Document):
         self.create_daily_task_schedules()
 
     def create_daily_task_schedules(self):
-        # Fetch the Laundry Request using the laundry_request_id
-        laundry_request = frappe.get_doc('Laundry Request', self.laundry_request_id)
+        # Check if LaundryRequest ID exists
+        laundry_request = None
+        location = None
+        
+        if self.laundry_request_id:
+            try:
+                laundry_request = frappe.get_doc('Laundry Request', self.laundry_request_id)
+                location = laundry_request.location
+            except frappe.DoesNotExistError:
+                frappe.throw(_("Laundry Request {0} not found").format(self.laundry_request_id))
 
-        # Get the location from Laundry Request
-        location = laundry_request.location  # Assuming 'location' is a field in Laundry Request
+        # Default location if no LaundryRequest
+        if not location:
+            for detail in self.laundry_task_plan_details:
+                if detail.location:
+                    location = detail.location
+                    break  
 
-        # Iterate through the child table entries in Laundry Task Plan
+        # Process each task detail
         for task in self.laundry_task_plan_details:
-            # Create a new Daily Task Schedule
+            item_codes = [item.strip() for item in task.item.split(",")]
+
+            # Ensure valid items
+            for item_code in item_codes:
+                if not frappe.db.exists("Item", item_code):
+                    frappe.throw(_("Item {0} does not exist. Please add it to the Item master.").format(item_code))
+
+            # Create Daily Task Schedule
             daily_task_schedule = frappe.new_doc("Daily Task Schedule")
-            daily_task_schedule.posting_date = self.posting_date
+            #daily_task_schedule.posting_date = self.posting_date
             daily_task_schedule.completion_date = self.completion_date
-            daily_task_schedule.laundry_request_id = self.laundry_request_id
             daily_task_schedule.location = location 
-            daily_task_schedule.item = task.item    
-            daily_task_schedule.quantity = task.quantity 
+            daily_task_schedule.item = item_code
+            daily_task_schedule.quantity = task.quantity
 
-
-            # Append task details to the Daily Task child table
+            # Add child table task details
             daily_task_schedule.append("daily_task", {
-                "task_name": task.task_name,          
-                "assigned_to": task.employee_name,                  
+                "task_name": task.task_name,
+                "assigned_to": task.employee_name or _("Unassigned")
             })
 
-            # Insert and commit the new Daily Task Schedule
+            
             daily_task_schedule.insert()
             frappe.db.commit()
 
     def validate(self):
-        frappe.logger().debug(f"Laundry Request ID: {self.laundry_request_id}")
-        if not self.laundry_request_id:
-            frappe.throw(_("Laundry Request ID is required for submission."))
+        # Skip validation for LaundryRequest ID in second case
+        frappe.logger().debug(f"Laundry Task Plan validation completed.")
 
 
-
-##Item part
-
+#Material Request part
 @frappe.whitelist()
 def create_material_request(docname):
     """
@@ -83,9 +97,9 @@ def create_material_request(docname):
         material_request.insert()
         material_request.submit()
     except Exception as e:
-        frappe.log_error(frappe.get_traceback(), "Material Request Creation Failed")
+        #frappe.log_error(frappe.get_traceback(), "Material Request Creation Failed")
         frappe.throw(_("Failed to create Material Request: {0}").format(str(e)))
 
     # Return the name of the created Material Request
     frappe.msgprint(_("Material Request {0} created successfully").format(material_request.name))
-    return material_request.name
+    return material_request.name 
