@@ -14,8 +14,8 @@
   "requested_by",
   "priority",
   "posting_date",
-  "completion_date",
-  "amended_from"
+  "amended_from",
+  "completion_date"
  ],
  "fields": [
   {
@@ -58,11 +58,6 @@
    "options": "High\nMedium\nLow"
   },
   {
-   "fieldname": "completion_date",
-   "fieldtype": "Date",
-   "label": "Completion Date"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -83,12 +78,17 @@
    "fieldtype": "Link",
    "label": "Task Type",
    "options": "Laundry Task"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-30 11:03:05.086631",
+ "modified": "2025-01-09 16:08:27.347456",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Request",

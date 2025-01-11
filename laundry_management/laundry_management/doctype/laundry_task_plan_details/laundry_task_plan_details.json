@@ -10,9 +10,11 @@
   "task_name",
   "task_type",
   "employee_name",
+  "employee_type",
+  "column_break_vftn",
   "item",
   "quantity",
-  "employee_type"
+  "location"
  ],
  "fields": [
   {
@@ -58,12 +60,22 @@
    "in_list_view": 1,
    "label": "Employee Type",
    "options": "Employee\nExternal Employee"
+  },
+  {
+   "fieldname": "column_break_vftn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Laundry Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-23 12:38:15.399350",
+ "modified": "2025-01-09 15:38:33.721415",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Task Plan Details",

@@ -18,8 +18,8 @@
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "posting_time",
@@ -31,7 +31,8 @@
    "fieldname": "laundry_request_id",
    "fieldtype": "Link",
    "label": "Laundry Request ID",
-   "options": "Laundry Request"
+   "options": "Laundry Request",
+   "read_only": 1
   },
   {
    "fieldname": "completion_date",
@@ -64,7 +65,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-30 10:57:22.808966",
+ "modified": "2025-01-09 14:56:50.592811",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Task Plan",
