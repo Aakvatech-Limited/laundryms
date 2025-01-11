@@ -20,7 +20,8 @@
   {
    "fieldname": "schedule_date",
    "fieldtype": "Date",
-   "label": "Schedule Date"
+   "label": "Schedule Date",
+   "read_only": 1
   },
   {
    "fieldname": "location",
@@ -45,7 +46,8 @@
    "fieldname": "laundry_request_id",
    "fieldtype": "Link",
    "label": "Laundry Request ID",
-   "options": "Laundry Request"
+   "options": "Laundry Request",
+   "read_only": 1
   },
   {
    "default": "Pass",
@@ -56,9 +58,8 @@
   },
   {
    "fieldname": "item",
-   "fieldtype": "Link",
-   "label": "Item",
-   "options": "Item"
+   "fieldtype": "Data",
+   "label": "Item"
   },
   {
    "fieldname": "quantity",
@@ -74,7 +75,9 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+
  "modified": "2024-12-30 11:29:54.094018",
+
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Daily Task Schedule",
