@@ -1,0 +1,78 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"ELQIfE6ETX\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Laundry</span>\",\"col\":12}},{\"id\":\"puVABLGSHv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laundry Location\",\"col\":3}},{\"id\":\"HFmKKFk-RE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Task Schedule\",\"col\":3}},{\"id\":\"OO7Uju4RGs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laundry Task Plan\",\"col\":3}},{\"id\":\"vJkcXyQVYP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laundry Request\",\"col\":3}},{\"id\":\"1yBDH-H8ME\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laundry Task\",\"col\":3}},{\"id\":\"-uvTprkBcj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"External Employee\",\"col\":3}}]",
+ "creation": "2024-12-31 08:51:13.087716",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Laundry",
+ "links": [],
+ "modified": "2025-01-10 12:40:56.909975",
+ "modified_by": "Administrator",
+ "module": "laundry_management",
+ "name": "Laundry",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 22.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Laundry Location",
+   "link_to": "Laundry Location",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Daily Task Schedule",
+   "link_to": "Daily Task Schedule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Laundry Task Plan",
+   "link_to": "Laundry Task Plan",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Laundry Request",
+   "link_to": "Laundry Request",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Laundry Task",
+   "link_to": "Laundry Task",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "External Employee",
+   "link_to": "External Employee",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Laundry"
+}
