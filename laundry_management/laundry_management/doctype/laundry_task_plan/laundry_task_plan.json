@@ -18,8 +18,8 @@
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "posting_time",
@@ -64,7 +64,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-30 10:57:22.808966",
+ "modified": "2025-01-07 08:10:50.021792",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Task Plan",

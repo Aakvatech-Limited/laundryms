@@ -4,12 +4,17 @@ from frappe.model.document import Document
 import frappe
 from frappe import _
 
-
 class LaundryTaskPlan(Document):
     def on_submit(self):
         self.create_daily_task_schedules()
 
     def create_daily_task_schedules(self):
+        # Fetch the Laundry Request using the laundry_request_id
+        laundry_request = frappe.get_doc('Laundry Request', self.laundry_request_id)
+
+        # Get the location from Laundry Request
+        location = laundry_request.location  # Assuming 'location' is a field in Laundry Request
+
         # Iterate through the child table entries in Laundry Task Plan
         for task in self.laundry_task_plan_details:
             # Create a new Daily Task Schedule
@@ -17,18 +22,20 @@ class LaundryTaskPlan(Document):
             daily_task_schedule.posting_date = self.posting_date
             daily_task_schedule.completion_date = self.completion_date
             daily_task_schedule.laundry_request_id = self.laundry_request_id
+            daily_task_schedule.location = location 
+            daily_task_schedule.item = task.item    
+            daily_task_schedule.quantity = task.quantity 
+
 
             # Append task details to the Daily Task child table
             daily_task_schedule.append("daily_task", {
                 "task_name": task.task_name,          
-                "assigned_to": task.employee_name,    
-                "item": task.item,                   
-                "qty": task.quantity,                
+                "assigned_to": task.employee_name,                  
             })
 
-        
+            # Insert and commit the new Daily Task Schedule
             daily_task_schedule.insert()
-            frappe.db.commit()  
+            frappe.db.commit()
 
     def validate(self):
         frappe.logger().debug(f"Laundry Request ID: {self.laundry_request_id}")
