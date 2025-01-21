@@ -20,7 +20,6 @@
   {
    "fieldname": "schedule_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Schedule Date",
    "read_only": 1
   },
@@ -76,7 +75,9 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+
  "modified": "2025-01-09 15:19:45.002356",
+
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Daily Task Schedule",
