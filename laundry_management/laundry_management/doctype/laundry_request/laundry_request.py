@@ -12,7 +12,7 @@ class LaundryRequest(Document):
     def create_laundry_task_plan(self):
         laundry_task_plan = frappe.new_doc("Laundry Task Plan")
         laundry_task_plan.laundry_request_id = self.name  
-        #laundry_task_plan.posting_date = self.posting_date  
+        laundry_task_plan.posting_date = self.posting_date  
         laundry_task_plan.completion_date = self.completion_date  
         laundry_task_plan.supervisor_name = None  
 

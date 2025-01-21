@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "LTP.#####",
- "creation": "2024-12-20 11:21:59.714656",
+ "creation": "2025-01-15 22:42:08.609835",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -60,12 +60,22 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Laundry Task Plan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-09 14:56:50.592811",
+ "modified": "2025-01-15 22:42:53.496002",
  "modified_by": "Administrator",
  "module": "laundry_management",
  "name": "Laundry Task Plan",

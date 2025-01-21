@@ -1,26 +1,122 @@
-<div>
-    <h1> Hello </h1>
+<style>
+    .marquee-title {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%; 
+        animation: scroll-left 10s linear infinite;
+    }
+
+    /* Hover Effect */
+    .marquee-title:hover {
+        color: #676b9b;
+        font-size: 3rem;
+    }
+
+    /* Keyframes for scrolling marquee */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
     
 
-    <!-- <div class="laundry-task-container">
-        <div class="laundry-task-wrapper">
-            {% for task in daily_task_schedule %}
-                <div class="task-card">
-                    <div class="task-header">
-                        <div class="task-date">
-                            <span>{{ task.date }}</span>
-                        </div>
-                        <div class="task-status">
-                            <span class="status-text">{{ task.status }}</span>
-                        </div>
-                    </div>
-                    <div class="task-body">
-                        <h2 class="task-name">{{ task.task_name }}</h2>
-                        <p class="employee-info">{{ task.employee_name }}, {{ task.location }}</p>
-                    </div>
-                </div>
-            {% endfor %}
+    /* General Dashboard Styles */
+    .dashboard {
+        padding: 2rem;
+        background-color: #576991;
+    }
+    .image-section {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Widget Row */
+    .widget-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Table Style for Task Schedule */
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        background: #72729b;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .table th, .table td {
+        padding: 1rem;
+        border: 1px solid #e0e0e0;
+        text-align: left;
+    }
+
+    .table th {
+        background: #4a69bd;
+        color: hwb(0 2% 98%);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .table tbody tr:hover {
+        background: #f4f4f4;
+    }
+
+    .centered-text {
+        text-align: center;
+        
+        font-weight: bold;
+        color: #dedee7;
+    }
+    .centered-text:hover {
+    color: #181715; 
+    cursor: pointer;
+    font-size: 1.5em;
+
+}
+
+
+</style>
+<div class="dashboard">
+    <!-- Task Schedule Table -->
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="centered-text">Task Schedule</h4>
+            <div class="image-section">
+                <img src="/files/laundry.png" alt="Dashboard Image">
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Schedule Name</th>
+                        <th>Task Name</th>
+                        <th>Assigned To</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Schedule Date</th>
+                    </tr>
+                </thead>
+                <tbody id="task_schedule_table">
+                    <!-- Rows populated dynamically -->
+                </tbody>
+            </table>
         </div>
-    </div> -->
-   
+    </div>
 </div>
