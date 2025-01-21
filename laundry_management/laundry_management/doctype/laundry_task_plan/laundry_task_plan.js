@@ -6,6 +6,7 @@
 
 // 	},
 // });
+
 frappe.ui.form.on('Laundry Task Plan', {
     refresh: function (frm) {
         // Add a custom button in the toolbar
@@ -39,3 +40,4 @@ frappe.ui.form.on('Laundry Task Plan', {
         });
     }
 });
+
