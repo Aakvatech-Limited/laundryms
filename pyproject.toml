@@ -1,9 +1,9 @@
 [project]
-name = "laundry_management"
+name = "laundryms"
 authors = [
     { name = "Asha Melius Kisonga", email = "ashakisonga2022@gmail.com"}
 ]
-description = "Laundry Management System"
+description = "LaundryMS System"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
