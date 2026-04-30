@@ -1,8 +1,8 @@
 app_name = "laundryms"
 app_title = "LaundryMS"
-app_publisher = "Asha Melius Kisonga"
+app_publisher = "Aakvatech"
 app_description = "Laundry Management System"
-app_email = "ashakisonga2022@gmail.com"
+app_email = "info@aakvatech.com"
 app_license = "mit"
 
 # Apps
